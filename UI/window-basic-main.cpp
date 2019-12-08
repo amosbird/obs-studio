@@ -3839,18 +3839,18 @@ void OBSBasic::closeEvent(QCloseEvent *event)
 				  "geometry",
 				  saveGeometry().toBase64().constData());
 
-	if (outputHandler && outputHandler->Active()) {
-		SetShowing(true);
+	// if (outputHandler && outputHandler->Active()) {
+	// 	SetShowing(true);
 
-		QMessageBox::StandardButton button = OBSMessageBox::question(
-			this, QTStr("ConfirmExit.Title"),
-			QTStr("ConfirmExit.Text"));
+	// 	QMessageBox::StandardButton button = OBSMessageBox::question(
+	// 		this, QTStr("ConfirmExit.Title"),
+	// 		QTStr("ConfirmExit.Text"));
 
-		if (button == QMessageBox::No) {
-			event->ignore();
-			return;
-		}
-	}
+	// 	if (button == QMessageBox::No) {
+	// 		event->ignore();
+	// 		return;
+	// 	}
+	// }
 
 	QWidget::closeEvent(event);
 	if (!event->isAccepted())
